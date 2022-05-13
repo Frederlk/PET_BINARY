@@ -1,3 +1,549 @@
-//====================================================================================================
+.mainblock {
+    flex: 1 1 auto;
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 0;
+    @media screen and (max-width: $md3+px), screen and (max-height: 600px) {
+        padding: 20px 0;
+    }
+    &__content {
+        position: relative;
+        z-index: 1;
+        flex: 1 1 auto;
+        ._container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
 
-//====================================================================================================
+    &__logo {
+    }
+
+    &__text {
+        color: #ffffff;
+        position: relative;
+        padding: 0px 0px 45px 0px;
+        margin: 30px 0;
+        line-height: 40px;
+        letter-spacing: 0.4em;
+        &::after {
+            content: "";
+            width: 105px;
+            height: 2px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            margin: 0px 0px 0px -52.5px;
+        }
+    }
+
+    &__title {
+        font-size: 34px;
+        font-weight: 900;
+        text-transform: uppercase;
+        @media screen and (max-width: $md3+px), screen and (max-height: 600px) {
+            font-size: 25px;
+            line-height: 30px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 26px;
+        text-transform: none;
+        @media screen and (max-width: $md3+px), screen and (max-height: 600px) {
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
+
+    &__footer {
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    &__btn {
+        margin: 0px 0px 40.6% 0px;
+    }
+
+    &__arrow {
+        position: relative;
+        animation: arrow 1.5s infinite ease;
+    }
+
+    @keyframes arrow {
+        0% {
+            top: 0;
+        }
+        50% {
+            top: 10px;
+        }
+        100% {
+            top: 0;
+        }
+    }
+
+    &__image {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+//===================================================================================================================================
+
+.content {
+    background-color: #fff;
+    position: relative;
+    z-index: 50;
+}
+.menu {
+    padding: 22px 0;
+    border-bottom: 1px solid #f2f2f2;
+    &_mb {
+        margin: 0px 0px 130px 0px;
+        @media (max-width: $md2+px) {
+            margin: 0px 0px 50px 0px;
+        }
+        @media (max-width: $md3+px) {
+            margin: 0px 0px 30px 0px;
+        }
+    }
+    @media (max-width: $md4+px) {
+        padding: 22px 0 12px 0;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            margin: 0px 25px;
+            @media (max-width: $md3+px) {
+                margin: 0px 15px 10px 15px;
+                flex: 0 1 25%;
+                text-align: center;
+            }
+        }
+        @media (max-width: $md4+px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__link {
+        font-size: 15px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #3c3c3c;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            color: #ada074;
+        }
+        &_act {
+            color: #ada074;
+        }
+    }
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+.about {
+    padding: 0px 0px 60px 0px;
+    @media (max-width: $md3+px) {
+        padding: 0px 0px 10px 0px;
+    }
+    &__header-block {
+        margin: 0px 0px 70px 0px;
+        @media (max-width: $md3+px) {
+            margin: 0px 0px 30px 0px;
+        }
+    }
+
+    &__body {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    &__row {
+        display: flex;
+        margin: 0px -15px;
+        @media (max-width: $md3+px) {
+            display: block;
+        }
+    }
+
+    &__column {
+        margin: 0px 0px 30px 0px;
+        flex: 0 1 33.333%;
+        padding: 0px 15px;
+    }
+
+    &__item {
+        text-align: center;
+        max-width: 260px;
+        @media (max-width: $md2+px) {
+            max-width: none;
+        }
+    }
+
+    &__icon {
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+        border: 1px solid #f2f2f2;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0px 40px 0px;
+        &_l {
+            img {
+                position: relative;
+                left: 6px;
+            }
+        }
+        @media (max-width: $md3+px) {
+            margin: 0px 0px 15px 0px;
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+        line-height: 1.2;
+        letter-spacing: 0.16em;
+        color: #000000;
+        text-transform: uppercase;
+        margin: 0px 0px 33px 0px;
+        @media (max-width: $md2+px) {
+            font-size: 18px;
+            margin: 0px 0px 25px 0px;
+        }
+        @media (max-width: $md3+px) {
+            margin: 0px 0px 15px 0px;
+        }
+    }
+
+    &__text {
+        line-height: 26px;
+        font-weight: 300;
+        color: #868585;
+    }
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+.portfolio {
+    background-color: #f3f3f3;
+    padding: 105px 0px 60px 0px;
+    @media (max-width: $md2+px) {
+        padding: 50px 0px 40px 0px;
+    }
+    &__header-block {
+        margin: 0px 0px 50px 0px;
+        @media (max-width: $md2+px) {
+            margin: 0px 0px 30px 0px;
+        }
+        @media (max-width: $md3+px) {
+            margin: 0px 0px 20px 0px;
+        }
+    }
+
+    &__filter {
+        margin: 0px 0px 135px 0px;
+        @media (max-width: $md2+px) {
+            margin: 0px 0px 50px 0px;
+        }
+        @media (max-width: $md3+px) {
+            margin: 0px 0px 20px 0px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        margin: 0px -15px;
+        flex-wrap: wrap;
+    }
+
+    &__column {
+        flex: 0 1 50%;
+        max-width: 50%;
+        padding: 0px 15px;
+        margin: 0px 0px 30px 0px;
+        @media (max-width: $md3+px) {
+            flex: 1 0 100%;
+            max-width: 100%;
+            margin: 0px 0px 20px 0px;
+        }
+    }
+
+    &__item {
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__footer {
+        padding: 35px 0px 0px 0px;
+        text-align: center;
+        @media (max-width: $md3+px) {
+            padding: 15px 0px 0px 0px;
+        }
+    }
+}
+.filter {
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__item {
+        font-size: 15px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #3c3c3c;
+        transition: all 0.3s ease 0s;
+        margin: 0px 25px;
+        cursor: pointer;
+        &:hover {
+            color: #ada074;
+        }
+        &.active {
+            color: #ada074;
+        }
+        @media (max-width: $md3+px) {
+            margin: 0px 15px;
+        }
+    }
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+.partners {
+    background: url("../img/Partners/bg.jpg") center / cover no-repeat;
+    padding: 100px 0px 70px 0;
+    margin: 0px 0px 180px 0px;
+    @media (max-width: $md2+px) {
+        padding: 70px 0px 40px 0px;
+        margin: 0px 0px 100px 0px;
+    }
+    @media (max-width: $md3+px) {
+        padding: 50px 0px 25px 0px;
+        margin: 0px 0px 70px 0px;
+    }
+    @media (max-width: $md4+px) {
+        padding: 40px 0px 15px 0px;
+        margin: 0px 0px 50px 0px;
+    }
+    &__title {
+        text-align: center;
+        font-size: 30px;
+        line-height: 1.2;
+        font-weight: 300;
+        letter-spacing: 0.06em;
+        color: #ffffff;
+        margin: 0px 0px 90px 0px;
+        @media (max-width: $md2+px) {
+            margin: 0px 0px 60px 0px;
+        }
+        @media (max-width: $md3+px) {
+            margin: 0px 0px 40px 0px;
+        }
+        @media (max-width: $md4+px) {
+            margin: 0px 0px 30px 0px;
+        }
+    }
+
+    &__items {
+        flex-wrap: wrap;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__column {
+        padding: 0px 50px;
+        margin: 0px 0px 30px 0px;
+        @media (max-width: $md3+px) {
+            padding: 0px 20px;
+            margin: 0px 0px 25px 0px;
+        }
+        @media (max-width: $md4+px) {
+            padding: 0px 10px;
+            flex: 0 1 50%;
+        }
+    }
+}
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+.contacts {
+    padding: 0px 0px 80px 0px;
+    @media (max-width: $md2+px) {
+        padding: 0px 0px 60px 0px;
+    }
+    @media (max-width: $md3+px) {
+        padding: 0px 0px 45px 0px;
+    }
+    @media (max-width: $md4+px) {
+        padding: 0px 0px 30px 0px;
+    }
+    &__header-block {
+        margin: 0px 0px 120px 0px;
+        @media (max-width: $md2+px) {
+            margin: 0px 0px 80px 0px;
+        }
+        @media (max-width: $md3+px) {
+            margin: 0px 0px 60px 0px;
+        }
+        @media (max-width: $md4+px) {
+            margin: 0px 0px 40px 0px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        margin: 0px -25px;
+        @media (max-width: $md3+px) {
+            display: block;
+        }
+    }
+
+    &__column {
+        flex: 0 1 50%;
+        padding: 0px 25px;
+    }
+
+    &__form {
+        text-align: right;
+        @media (max-width: $md3+px) {
+            text-align: left;
+            margin: 0px 0px 30px 0px;
+            @media (max-width: $md4+px) {
+                margin: 0px 0px 15px 0px;
+            }
+        }
+    }
+
+    &__content {
+        max-width: 255px;
+        color: #000000;
+        @media (max-width: $md3+px) {
+            max-width: none;
+            text-align: center;
+            font-size: 16px;
+        }
+    }
+
+    &__text {
+        line-height: 1.5;
+        margin: -3px 0px 40px 0px;
+        @media (max-width: $md2+px) {
+            margin: -3px 0px 20px 0px;
+        }
+        @media (max-width: $md3+px) {
+            margin: 0px 0px 15px 0px;
+        }
+    }
+
+    &__name {
+        font-weight: 700;
+        margin: 0px 0px 20px 0px;
+        @media (max-width: $md2+px) {
+            margin: 0px 0px 15px 0px;
+        }
+    }
+
+    &__social {
+        margin: 0px 0px 15px 0px;
+        @media (max-width: $md2+px) {
+            margin: 0px 0px 10px 0px;
+        }
+    }
+
+    &__email {
+        a {
+            font-weight: 700;
+            color: #000;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.form-contacts {
+    &__body {
+        display: inline-block;
+        width: 100%;
+        max-width: 385px;
+        @media (max-width: $md3+px) {
+            display: block;
+            max-width: none;
+        }
+    }
+
+    &__row {
+        display: flex;
+        margin: 0px -15px 70px -15px;
+        @media (max-width: $md2+px) {
+            margin: 0px -15px 40px -15px;
+        }
+        @media (max-width: $md3+px) {
+            margin: 0px -15px 30px -15px;
+        }
+        @media (max-width: $md4+px) {
+            display: block;
+            margin: 0px -15px 20px -15px;
+        }
+    }
+
+    &__column {
+        flex: 0 1 50%;
+        padding: 0px 15px;
+    }
+
+    &__input {
+        @media (max-width: $md4+px) {
+            margin: 0px 0px 20px 0px;
+        }
+    }
+
+    &__label {
+        text-align: left;
+        margin: 0px 0px 15px 0px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #000000;
+    }
+    &__btn.btn {
+        margin: 35px 0px 0px 0px;
+        @media (max-width: $md2+px) {
+            margin: 25px 0px 0px 0px;
+        }
+        @media (max-width: $md3+px) {
+            display: block;
+            width: 100%;
+            margin: 20px 0px 0px 0px;
+        }
+    }
+}
+.social {
+    display: flex;
+    &__item {
+        margin: 0px 15px 0px 0px;
+        @media (max-width: $md3+px) {
+            flex: 0 1 50%;
+            margin: -37px 0px 0px 0px;
+        }
+    }
+}
