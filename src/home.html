@@ -4,7 +4,6 @@
 
     <body>
         <div class="wrapper">
-            <!-- @@include('html/_header.htm',{}) -->
             <main class="page">
                 <section data-fullscreen class="mainblock">
                     <div class="mainblock__container">
@@ -18,7 +17,7 @@
                             </h1>
                             <div class="mainblock__footer">
                                 <a href="#" class="mainblock__button button button_w"><span>READ MORE</span></a>
-                                <a href="#content" data-goto="" class="mainblock__arrow">
+                                <a href="#content" data-goto=".about" class="mainblock__arrow">
                                     <img src="@img/icons/arrow_down.png" alt="arrow icon" />
                                 </a>
                             </div>
@@ -29,17 +28,8 @@
                     </div>
                 </section>
 
-                <div class="content" id="content">
-                    <div class="menu menu_mb">
-                        <nav class="menu__body">
-                            <ul class="menu__list">
-                                <li class="menu__item"><a href="#" class="menu__link menu__link_act">HOME</a></li>
-                                <li class="menu__item"><a href="#" class="menu__link">ABOUT US</a></li>
-                                <li class="menu__item"><a href="#" class="menu__link">PORTFOLIO</a></li>
-                                <li class="menu__item"><a href="#" class="menu__link">CONTACT</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+                <div class="content">
+                    @@include('html/_header.htm',{})
 
                     <section class="about">
                         <div class="about__container">
@@ -134,37 +124,41 @@
                         </div>
                     </section>
 
-                    <div class="partners">
+                    <section class="partners">
                         <div class="partners__container">
-                            <div class="partners__title">Our partners</div>
+                            <h2 class="partners__title">Our partners</h2>
                             <div class="partners__items">
                                 <div class="partners__column">
                                     <div class="partners__item">
-                                        <img src="@img/Partners/01.png" alt="" />
+                                        <img src="@img/Partners/01.png" alt="icon" />
                                     </div>
                                 </div>
                                 <div class="partners__column">
                                     <div class="partners__item">
-                                        <img src="@img/Partners/02.png" alt="" />
+                                        <img src="@img/Partners/02.png" alt="icon" />
                                     </div>
                                 </div>
                                 <div class="partners__column">
                                     <div class="partners__item">
-                                        <img src="@img/Partners/03.png" alt="" />
+                                        <img src="@img/Partners/03.png" alt="icon" />
                                     </div>
                                 </div>
                                 <div class="partners__column">
                                     <div class="partners__item">
-                                        <img src="@img/Partners/04.png" alt="" />
+                                        <img src="@img/Partners/04.png" alt="icon" />
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="contacts">
+                        <div class="partners__bg-ibg">
+                            <img src="@img/Partners/bg.jpg" alt="background" />
+                        </div>
+                    </section>
+
+                    <section class="contacts">
                         <div class="contacts__container">
                             <div class="contacts__header-block header-block">
-                                <div class="header-block__title">Contact</div>
+                                <h2 class="header-block__title">Contact</h2>
                             </div>
                             <div class="contacts__body">
                                 <div class="contacts__column">
@@ -177,10 +171,11 @@
                                                         <input
                                                             autocomplete="off"
                                                             type="text"
-                                                            name="form[]"
-                                                            data-error=""
-                                                            data-value=""
-                                                            class="input _req"
+                                                            name="name"
+                                                            data-error="error"
+                                                            placeholder=""
+                                                            class="input"
+                                                            data-required
                                                         />
                                                     </div>
                                                 </div>
@@ -190,10 +185,11 @@
                                                         <input
                                                             autocomplete="off"
                                                             type="text"
-                                                            name="form[]"
-                                                            data-error=""
-                                                            data-value=""
-                                                            class="input _req _email"
+                                                            name="email"
+                                                            data-error="error"
+                                                            placeholder=""
+                                                            class="input"
+                                                            data-required="email"
                                                         />
                                                     </div>
                                                 </div>
@@ -202,10 +198,12 @@
                                                 <div class="form-contacts__label">MESSAGE</div>
                                                 <textarea
                                                     autocomplete="off"
-                                                    name="form[]"
-                                                    data-error=""
-                                                    data-value=""
-                                                    class="input _req"
+                                                    type="text"
+                                                    name="text"
+                                                    data-error="error"
+                                                    placeholder=""
+                                                    class="input"
+                                                    data-required
                                                 ></textarea>
                                             </div>
                                             <button type="submit" class="form-contacts__button button button_b">
@@ -214,6 +212,7 @@
                                         </div>
                                     </form>
                                 </div>
+
                                 <div class="contacts__column">
                                     <div class="contacts__content">
                                         <div class="contacts__text">
@@ -223,20 +222,20 @@
                                         <div class="contacts__name">Postma Elena</div>
                                         <div class="contacts__social social">
                                             <a href="#" class="social__item">
-                                                <img src="@img/icons/iconFB.png" alt="" />
+                                                <img src="@img/icons/iconFB.png" alt="Facebook" />
                                             </a>
                                             <a href="#" class="social__item">
-                                                <img src="@img/icons/iconLnI.png" alt="" />
+                                                <img src="@img/icons/iconLnI.png" alt="LinkedIn" />
                                             </a>
                                         </div>
                                         <div class="contacts__email">
-                                            e-mail:<a href="mailto:postma.elena@gmail.com"> postma.elena@gmail.com</a>
+                                            e-mail:<a href="mailto:postma.elena@gmail.com">postma.elena@gmail.com</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </main>
             @@include('html/_footer.htm',{})
