@@ -17,9 +17,6 @@ textarea {
     min-height: rem(35);
     padding: 0px rem(25);
     font-size: rem(15);
-    &._form-focus {
-        border-top: rem(1) solid blue;
-    }
     &._form-error {
         border-top: rem(1) solid red;
     }
