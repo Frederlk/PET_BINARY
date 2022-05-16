@@ -3,21 +3,25 @@ import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
-$(".filter__item").click(function (event) {
-    var i = $(this).data("filter");
-    if (i == 1) {
-        $(".portfolio__column").show();
-    } else {
-        $(".portfolio__column").hide();
-        $(".portfolio__column.f_" + i).show();
+window.onload = function () {
+    if (document.querySelector("._filter")) {
+        const filterItems = document.querySelectorAll(".filter__item");
+        const filterColumns = document.querySelectorAll(".portfolio__column-ibg");
+        filterColumns.forEach((item) => item.classList.add("_showed"));
+
+        filterItems.forEach((item) =>
+            item.addEventListener("click", function (e) {
+                let i = this.dataset.filter;
+                if (i == 1) {
+                    filterColumns.forEach((item) => item.classList.add("_showed"));
+                } else {
+                    filterColumns.forEach((item) => item.classList.remove("_showed"));
+                    document.querySelectorAll(".portfolio__column-ibg.f_" + i).forEach((item) => item.classList.add("_showed"));
+                }
+                filterItems.forEach((item) => item.classList.remove("_active"));
+                this.classList.add("_active");
+                return false;
+            })
+        );
     }
-    $(".filter__item").removeClass("active");
-    $(this).addClass("active");
-
-    return false;
-});
-
-$(window).scroll(function (event) {
-    var s = 0 - $(this).scrollTop() / 2;
-    $(".mainblock__image").css("transform", "translate3d(0, " + s + "px, 0)");
-});
+};

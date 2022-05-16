@@ -23,6 +23,9 @@
     }
 
     &__logo {
+        img {
+            max-width: 100%;
+        }
     }
 
     &__text {
@@ -227,85 +230,64 @@
 
 .portfolio {
     background-color: #f3f3f3;
-    padding: 105px 0px 60px 0px;
-    @media (max-width: $tablet) {
-        padding: 50px 0px 40px 0px;
-    }
+    @include adaptiveValue("padding-top", 105, 50, 1170, 767.98, 1);
+    @include adaptiveValue("padding-bottom", 105, 50, 1170, 767.98, 1);
     &__header-block {
-        margin: 0px 0px 50px 0px;
-        @media (max-width: $tablet) {
-            margin: 0px 0px 30px 0px;
-        }
-        @media (max-width: $mobile) {
-            margin: 0px 0px 20px 0px;
-        }
+        @include adaptiveValue("margin-bottom", 50, 20, 1170, 767.98, 1);
     }
 
     &__filter {
-        margin: 0px 0px 135px 0px;
-        @media (max-width: $tablet) {
-            margin: 0px 0px 50px 0px;
-        }
-        @media (max-width: $mobile) {
-            margin: 0px 0px 20px 0px;
-        }
+        @include adaptiveValue("margin-bottom", 100, 30, 1170, 767.98, 1);
     }
 
     &__items {
-        display: flex;
-        margin: 0px -15px;
-        flex-wrap: wrap;
-    }
-
-    &__column {
-        flex: 0 1 50%;
-        max-width: 50%;
-        padding: 0px 15px;
-        margin: 0px 0px 30px 0px;
+        display: grid;
+        @include adaptiveValue("gap", 30, 20, 1170, 767.98, 1);
+        grid-template-columns: repeat(2, 1fr);
         @media (max-width: $mobile) {
-            flex: 1 0 100%;
-            max-width: 100%;
-            margin: 0px 0px 20px 0px;
+            grid-template-columns: 1fr;
         }
     }
 
-    &__item {
-        img {
-            max-width: 100%;
+    &__column-ibg {
+        display: none;
+        cursor: pointer;
+        @include adaptiveValue("min-height", 360, 260, 1170, 479.98, 1);
+        &._showed {
+            display: block;
         }
     }
 
     &__footer {
-        padding: 35px 0px 0px 0px;
+        @include adaptiveValue("padding-top", 35, 20, 1170, 479.98, 1);
         text-align: center;
-        @media (max-width: $mobile) {
-            padding: 15px 0px 0px 0px;
-        }
     }
 }
+
 .filter {
     &__list {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     &__item {
-        font-size: 15px;
+        font-size: rem(15);
         line-height: 1.2;
         font-weight: 700;
         color: #3c3c3c;
         transition: all 0.3s ease 0s;
-        margin: 0px 25px;
+        margin: 0px rem(25);
         cursor: pointer;
         &:hover {
             color: #ada074;
         }
-        &.active {
+        &._active {
             color: #ada074;
         }
         @media (max-width: $mobile) {
-            margin: 0px 15px;
+            margin: 0px rem(15);
         }
     }
 }
