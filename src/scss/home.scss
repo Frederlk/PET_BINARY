@@ -104,41 +104,38 @@
     position: relative;
     z-index: 50;
 }
+
+//========================================================================================================================================================
+
 .menu {
-    padding: 22px 0;
-    border-bottom: 1px solid #f2f2f2;
+    padding: rem(22) 0;
+    border-bottom: rem(1) solid #f2f2f2;
     &_mb {
-        margin: 0px 0px 130px 0px;
-        @media (max-width: $tablet) {
-            margin: 0px 0px 50px 0px;
-        }
-        @media (max-width: $mobile) {
-            margin: 0px 0px 30px 0px;
-        }
+        @include adaptiveValue("margin-bottom", 130, 30, 1170, 767.98, 1);
     }
     @media (max-width: $mobileSmall) {
-        padding: 22px 0 12px 0;
+        padding: rem(22) 0 rem(15) 0;
     }
 
     &__list {
         display: flex;
         justify-content: center;
         align-items: center;
-        li {
-            margin: 0px 25px;
-            @media (max-width: $mobile) {
-                margin: 0px 15px 10px 15px;
-                flex: 0 1 25%;
-                text-align: center;
-            }
-        }
+        flex-wrap: wrap;
+        row-gap: rem(15);
+    }
+
+    &__item {
+        padding: 0px rem(25);
         @media (max-width: $mobileSmall) {
-            flex-wrap: wrap;
+            flex: 0 1 50%;
+            padding: 0px rem(10);
+            text-align: center;
         }
     }
 
     &__link {
-        font-size: 15px;
+        font-size: rem(15);
         line-height: 1.2;
         font-weight: 700;
         color: #3c3c3c;
@@ -155,83 +152,72 @@
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 .about {
-    padding: 0px 0px 60px 0px;
-    @media (max-width: $mobile) {
-        padding: 0px 0px 10px 0px;
-    }
+    @include adaptiveValue("padding-bottom", 60, 10, 1170, 767.98, 1);
     &__header-block {
-        margin: 0px 0px 70px 0px;
-        @media (max-width: $mobile) {
-            margin: 0px 0px 30px 0px;
-        }
+        @include adaptiveValue("margin-bottom", 70, 30, 1170, 767.98, 1);
+    }
+
+    &__container {
     }
 
     &__body {
         text-align: center;
-        max-width: 900px;
+        max-width: rem(900);
         margin: 0 auto;
     }
 
     &__row {
         display: flex;
-        margin: 0px -15px;
+        margin: 0px rem(-15);
         @media (max-width: $mobile) {
             display: block;
         }
     }
 
     &__column {
-        margin: 0px 0px 30px 0px;
+        margin-bottom: rem(30);
         flex: 0 1 33.333%;
-        padding: 0px 15px;
+        padding: 0px rem(15);
     }
 
     &__item {
         text-align: center;
-        max-width: 260px;
+        max-width: rem(260);
         @media (max-width: $tablet) {
             max-width: none;
         }
     }
 
     &__icon {
-        width: 92px;
-        height: 92px;
+        width: rem(90);
+        height: rem(90);
         border-radius: 50%;
-        border: 1px solid #f2f2f2;
+        border: rem(1) solid #f2f2f2;
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        margin: 0px 0px 40px 0px;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 40, 15, 1170, 767.98, 1);
+        }
         &_l {
             img {
                 position: relative;
-                left: 6px;
+                left: rem(6);
             }
-        }
-        @media (max-width: $mobile) {
-            margin: 0px 0px 15px 0px;
         }
     }
 
     &__title {
-        font-size: 22px;
         line-height: 1.2;
         letter-spacing: 0.16em;
         color: #000000;
         text-transform: uppercase;
-        margin: 0px 0px 33px 0px;
-        @media (max-width: $tablet) {
-            font-size: 18px;
-            margin: 0px 0px 25px 0px;
-        }
-        @media (max-width: $mobile) {
-            margin: 0px 0px 15px 0px;
-        }
+        @include adaptiveValue("font-size", 22, 18, 1170, 991.98, 1);
+        @include adaptiveValue("margin-bottom", 35, 15, 1170, 767.98, 1);
     }
 
     &__text {
-        line-height: 26px;
+        line-height: math.div(26, 14);
         font-weight: 300;
         color: #868585;
     }
