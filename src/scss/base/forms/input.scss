@@ -4,27 +4,28 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea {
+    background-color: #f8f7f7;
+    border-top: rem(1) solid #000;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
 .input {
-    border-radius: 0 !important;
+    position: relative;
     width: 100%;
     display: block;
-    padding: 0px 20px;
-    border: 1px solid #eee;
-    &:focus-visible {
-        outline-offset: rem(-1);
-        outline: white solid rem(1);
-    }
+    min-height: rem(35);
+    padding: 0px rem(25);
+    font-size: rem(15);
     &._form-focus {
+        border-top: rem(1) solid blue;
     }
     &._form-error {
-        color: red;
+        border-top: rem(1) solid red;
     }
 }
 textarea.input {
+    height: rem(120);
     resize: none;
-    padding: 0px 0px;
+    padding: rem(10) rem(20);
 }
