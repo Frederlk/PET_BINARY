@@ -1,5 +1,5 @@
-//<BUTTONS (a.btn+tab)>
-// Снипет (HTML): btn
+//<BUTTONS (a.button+tab)>
+// Снипет (HTML): button
 
 .button {
     display: inline-block;
@@ -41,11 +41,11 @@
         z-index: 1;
     }
     &:hover {
-        &.btn_w {
+        &.button_w {
             color: rgb(0, 0, 0);
         }
 
-        &.btn_b {
+        &.button_b {
             color: rgb(255, 255, 255);
         }
         &::after {

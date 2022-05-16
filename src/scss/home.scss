@@ -2,24 +2,24 @@
     flex: 1 1 auto;
     position: relative;
     display: flex;
-    min-height: 100vh;
     justify-content: center;
     text-align: center;
-    padding: 50px 0;
-    @media screen and (max-width: $md3+px), screen and (max-height: 600px) {
-        padding: 20px 0;
+    padding: rem(50) 0;
+    @media screen and (max-width: $mobile), screen and (max-height: em(600)) {
+        padding: rem(20) 0;
     }
     &__content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__container {
         position: relative;
         z-index: 1;
         flex: 1 1 auto;
-        ._container {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-        }
     }
 
     &__logo {
@@ -28,38 +28,37 @@
     &__text {
         color: #ffffff;
         position: relative;
-        padding: 0px 0px 45px 0px;
-        margin: 30px 0;
-        line-height: 40px;
+        padding-bottom: rem(45);
+        margin: rem(30) 0;
         letter-spacing: 0.4em;
         &::after {
             content: "";
-            width: 105px;
-            height: 2px;
+            width: rem(105);
+            height: rem(2);
             background-color: #fff;
             position: absolute;
             left: 50%;
             bottom: 0;
-            margin: 0px 0px 0px -52.5px;
+            transform: translate(-50%, 0px);
         }
     }
 
     &__title {
-        font-size: 34px;
+        font-size: rem(34);
+        line-height: math.div(40, 34);
         font-weight: 900;
         text-transform: uppercase;
-        @media screen and (max-width: $md3+px), screen and (max-height: 600px) {
-            font-size: 25px;
-            line-height: 30px;
+        @media screen and (max-width: $mobile), screen and (max-height: em(600)) {
+            font-size: rem(25);
         }
     }
 
     &__subtitle {
-        font-size: 26px;
+        font-size: rem(26);
+        line-height: math.div(40, 26);
         text-transform: none;
-        @media screen and (max-width: $md3+px), screen and (max-height: 600px) {
-            font-size: 22px;
-            line-height: 30px;
+        @media screen and (max-width: $mobile), screen and (max-height: em(600)) {
+            font-size: rem(22);
         }
     }
 
@@ -68,8 +67,8 @@
         flex-direction: column;
     }
 
-    &__btn {
-        margin: 0px 0px 40.6% 0px;
+    &__button {
+        margin-bottom: rem(30);
     }
 
     &__arrow {
@@ -79,17 +78,17 @@
 
     @keyframes arrow {
         0% {
-            top: 0;
+            top: rem(5);
         }
         50% {
-            top: 10px;
+            top: rem(10);
         }
         100% {
-            top: 0;
+            top: rem(5);
         }
     }
 
-    &__image {
+    &__image-ibg {
         position: fixed;
         width: 100%;
         height: 100%;
@@ -110,14 +109,14 @@
     border-bottom: 1px solid #f2f2f2;
     &_mb {
         margin: 0px 0px 130px 0px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             margin: 0px 0px 50px 0px;
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0px 0px 30px 0px;
         }
     }
-    @media (max-width: $md4+px) {
+    @media (max-width: $mobileSmall) {
         padding: 22px 0 12px 0;
     }
 
@@ -127,13 +126,13 @@
         align-items: center;
         li {
             margin: 0px 25px;
-            @media (max-width: $md3+px) {
+            @media (max-width: $mobile) {
                 margin: 0px 15px 10px 15px;
                 flex: 0 1 25%;
                 text-align: center;
             }
         }
-        @media (max-width: $md4+px) {
+        @media (max-width: $mobileSmall) {
             flex-wrap: wrap;
         }
     }
@@ -157,12 +156,12 @@
 
 .about {
     padding: 0px 0px 60px 0px;
-    @media (max-width: $md3+px) {
+    @media (max-width: $mobile) {
         padding: 0px 0px 10px 0px;
     }
     &__header-block {
         margin: 0px 0px 70px 0px;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0px 0px 30px 0px;
         }
     }
@@ -176,7 +175,7 @@
     &__row {
         display: flex;
         margin: 0px -15px;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             display: block;
         }
     }
@@ -190,7 +189,7 @@
     &__item {
         text-align: center;
         max-width: 260px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             max-width: none;
         }
     }
@@ -210,7 +209,7 @@
                 left: 6px;
             }
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0px 0px 15px 0px;
         }
     }
@@ -222,11 +221,11 @@
         color: #000000;
         text-transform: uppercase;
         margin: 0px 0px 33px 0px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             font-size: 18px;
             margin: 0px 0px 25px 0px;
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0px 0px 15px 0px;
         }
     }
@@ -243,25 +242,25 @@
 .portfolio {
     background-color: #f3f3f3;
     padding: 105px 0px 60px 0px;
-    @media (max-width: $md2+px) {
+    @media (max-width: $tablet) {
         padding: 50px 0px 40px 0px;
     }
     &__header-block {
         margin: 0px 0px 50px 0px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             margin: 0px 0px 30px 0px;
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0px 0px 20px 0px;
         }
     }
 
     &__filter {
         margin: 0px 0px 135px 0px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             margin: 0px 0px 50px 0px;
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0px 0px 20px 0px;
         }
     }
@@ -277,7 +276,7 @@
         max-width: 50%;
         padding: 0px 15px;
         margin: 0px 0px 30px 0px;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             flex: 1 0 100%;
             max-width: 100%;
             margin: 0px 0px 20px 0px;
@@ -293,7 +292,7 @@
     &__footer {
         padding: 35px 0px 0px 0px;
         text-align: center;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             padding: 15px 0px 0px 0px;
         }
     }
@@ -319,7 +318,7 @@
         &.active {
             color: #ada074;
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0px 15px;
         }
     }
@@ -331,15 +330,15 @@
     background: url("../img/Partners/bg.jpg") center / cover no-repeat;
     padding: 100px 0px 70px 0;
     margin: 0px 0px 180px 0px;
-    @media (max-width: $md2+px) {
+    @media (max-width: $tablet) {
         padding: 70px 0px 40px 0px;
         margin: 0px 0px 100px 0px;
     }
-    @media (max-width: $md3+px) {
+    @media (max-width: $mobile) {
         padding: 50px 0px 25px 0px;
         margin: 0px 0px 70px 0px;
     }
-    @media (max-width: $md4+px) {
+    @media (max-width: $mobileSmall) {
         padding: 40px 0px 15px 0px;
         margin: 0px 0px 50px 0px;
     }
@@ -351,13 +350,13 @@
         letter-spacing: 0.06em;
         color: #ffffff;
         margin: 0px 0px 90px 0px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             margin: 0px 0px 60px 0px;
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0px 0px 40px 0px;
         }
-        @media (max-width: $md4+px) {
+        @media (max-width: $mobileSmall) {
             margin: 0px 0px 30px 0px;
         }
     }
@@ -373,11 +372,11 @@
     &__column {
         padding: 0px 50px;
         margin: 0px 0px 30px 0px;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             padding: 0px 20px;
             margin: 0px 0px 25px 0px;
         }
-        @media (max-width: $md4+px) {
+        @media (max-width: $mobileSmall) {
             padding: 0px 10px;
             flex: 0 1 50%;
         }
@@ -387,24 +386,24 @@
 
 .contacts {
     padding: 0px 0px 80px 0px;
-    @media (max-width: $md2+px) {
+    @media (max-width: $tablet) {
         padding: 0px 0px 60px 0px;
     }
-    @media (max-width: $md3+px) {
+    @media (max-width: $mobile) {
         padding: 0px 0px 45px 0px;
     }
-    @media (max-width: $md4+px) {
+    @media (max-width: $mobileSmall) {
         padding: 0px 0px 30px 0px;
     }
     &__header-block {
         margin: 0px 0px 120px 0px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             margin: 0px 0px 80px 0px;
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0px 0px 60px 0px;
         }
-        @media (max-width: $md4+px) {
+        @media (max-width: $mobileSmall) {
             margin: 0px 0px 40px 0px;
         }
     }
@@ -412,7 +411,7 @@
     &__body {
         display: flex;
         margin: 0px -25px;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             display: block;
         }
     }
@@ -424,10 +423,10 @@
 
     &__form {
         text-align: right;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             text-align: left;
             margin: 0px 0px 30px 0px;
-            @media (max-width: $md4+px) {
+            @media (max-width: $mobileSmall) {
                 margin: 0px 0px 15px 0px;
             }
         }
@@ -436,7 +435,7 @@
     &__content {
         max-width: 255px;
         color: #000000;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             max-width: none;
             text-align: center;
             font-size: 16px;
@@ -446,10 +445,10 @@
     &__text {
         line-height: 1.5;
         margin: -3px 0px 40px 0px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             margin: -3px 0px 20px 0px;
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0px 0px 15px 0px;
         }
     }
@@ -457,14 +456,14 @@
     &__name {
         font-weight: 700;
         margin: 0px 0px 20px 0px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             margin: 0px 0px 15px 0px;
         }
     }
 
     &__social {
         margin: 0px 0px 15px 0px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             margin: 0px 0px 10px 0px;
         }
     }
@@ -484,7 +483,7 @@
         display: inline-block;
         width: 100%;
         max-width: 385px;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             display: block;
             max-width: none;
         }
@@ -493,13 +492,13 @@
     &__row {
         display: flex;
         margin: 0px -15px 70px -15px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             margin: 0px -15px 40px -15px;
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0px -15px 30px -15px;
         }
-        @media (max-width: $md4+px) {
+        @media (max-width: $mobileSmall) {
             display: block;
             margin: 0px -15px 20px -15px;
         }
@@ -511,7 +510,7 @@
     }
 
     &__input {
-        @media (max-width: $md4+px) {
+        @media (max-width: $mobileSmall) {
             margin: 0px 0px 20px 0px;
         }
     }
@@ -525,12 +524,12 @@
         letter-spacing: 0.06em;
         color: #000000;
     }
-    &__btn.btn {
+    &__button.btn {
         margin: 35px 0px 0px 0px;
-        @media (max-width: $md2+px) {
+        @media (max-width: $tablet) {
             margin: 25px 0px 0px 0px;
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             display: block;
             width: 100%;
             margin: 20px 0px 0px 0px;
@@ -541,7 +540,7 @@
     display: flex;
     &__item {
         margin: 0px 15px 0px 0px;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             flex: 0 1 50%;
             margin: -37px 0px 0px 0px;
         }
