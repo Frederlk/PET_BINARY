@@ -34,9 +34,6 @@
             return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
         }
     };
-    function getHash() {
-        if (location.hash) return location.hash.replace("#", "");
-    }
     function fullVHfix() {
         const fullScreens = document.querySelectorAll("[data-fullscreen]");
         if (fullScreens.length && isMobile.any()) {
@@ -71,11 +68,6 @@
         bodyUnlock();
         document.documentElement.classList.remove("menu-open");
     }
-    function FLS(message) {
-        setTimeout((() => {
-            if (window.FLS) console.log(message);
-        }), 0);
-    }
     let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
         const targetBlockElement = document.querySelector(targetBlock);
         if (targetBlockElement) {
@@ -85,25 +77,15 @@
                 headerItem = "header.header";
                 headerItemHeight = document.querySelector(headerItem).offsetHeight;
             }
-            let options = {
-                speedAsDuration: true,
-                speed,
-                header: headerItem,
-                offset: offsetTop,
-                easing: "easeOutQuad"
-            };
             document.documentElement.classList.contains("menu-open") ? menuClose() : null;
-            if ("undefined" !== typeof SmoothScroll) (new SmoothScroll).animateScroll(targetBlockElement, "", options); else {
-                let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
-                targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
-                targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
-                window.scrollTo({
-                    top: targetBlockElementPosition,
-                    behavior: "smooth"
-                });
-            }
-            FLS(`[gotoBlock]: Юхуу...едем к ${targetBlock}`);
-        } else FLS(`[gotoBlock]: Ой ой..Такого блока нет на странице: ${targetBlock}`);
+            let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
+            targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
+            targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
+            window.scrollTo({
+                top: targetBlockElementPosition,
+                behavior: "smooth"
+            });
+        }
     };
     function formFieldsInit(options = {
         viewPass: false
@@ -132,14 +114,6 @@
                     targetElement.parentElement.classList.remove("_form-focus");
                 }
                 if (targetElement.hasAttribute("data-validate")) formValidate.validateInput(targetElement);
-            }
-        }));
-        if (options.viewPass) document.addEventListener("click", (function(e) {
-            let targetElement = e.target;
-            if (targetElement.closest('[class*="__viewpass"]')) {
-                let inputType = targetElement.classList.contains("_viewpass-active") ? "password" : "text";
-                targetElement.parentElement.querySelector("input").setAttribute("type", inputType);
-                targetElement.classList.toggle("_viewpass-active");
             }
         }));
     }
@@ -191,18 +165,6 @@
                     el.classList.remove("_form-focus");
                     formValidate.removeError(el);
                 }
-                let checkboxes = form.querySelectorAll(".checkbox__input");
-                if (checkboxes.length > 0) for (let index = 0; index < checkboxes.length; index++) {
-                    const checkbox = checkboxes[index];
-                    checkbox.checked = false;
-                }
-                if (flsModules.select) {
-                    let selects = form.querySelectorAll(".select");
-                    if (selects.length) for (let index = 0; index < selects.length; index++) {
-                        const select = selects[index].querySelector("select");
-                        flsModules.select.selectBuild(select);
-                    }
-                }
             }), 0);
         },
         emailTest(formRequiredItem) {
@@ -249,11 +211,7 @@
                     e.preventDefault();
                     formSent(form);
                 }
-            } else {
-                e.preventDefault();
-                const formError = form.querySelector("._form-error");
-                if (formError && form.hasAttribute("data-goto-error")) gotoBlock(formError, true, 1e3);
-            }
+            } else e.preventDefault();
         }
         function formSent(form) {
             document.dispatchEvent(new CustomEvent("formSent", {
@@ -268,10 +226,6 @@
                 }
             }), 0);
             formValidate.formClean(form);
-            formLogging(`Форма отправлена!`);
-        }
-        function formLogging(message) {
-            FLS(`[Формы]: ${message}`);
         }
     }
     let addWindowScrollEvent = false;
@@ -306,11 +260,6 @@
                     if (entry.isIntersecting) navigatorCurrentItem ? navigatorCurrentItem.classList.add("_navigator-active") : null; else navigatorCurrentItem ? navigatorCurrentItem.classList.remove("_navigator-active") : null;
                 }
             }
-        }
-        if (getHash()) {
-            let goToHash;
-            if (document.querySelector(`#${getHash()}`)) goToHash = `#${getHash()}`; else if (document.querySelector(`.${getHash()}`)) goToHash = `.${getHash()}`;
-            goToHash ? gotoBlock(goToHash, true, 500, 20) : null;
         }
     }
     setTimeout((() => {
@@ -2006,7 +1955,6 @@ PERFORMANCE OF THIS SOFTWARE.
             }))));
         }
     };
-    window["FLS"] = true;
     isWebp();
     fullVHfix();
     formFieldsInit({

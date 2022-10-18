@@ -1,162 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Верстка «12_Binary»</title>
+	<title>Binary</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20221018183055">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-	<div class="rootpage">
-		<h1>«12_Binary»</h1>
-		<div class="rootpage__info">Project Features</div>
-		<h2>Pages:</h2>
-		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html">Home Page</a></li>
-		</ol>
-		<div class="rootpage__contacts">
-			<h2>My contacts:</h2>
-			<p>Email: <a href="mailto:pertrinichshadow@gmail.com">pertrinichshadow@gmail.com</a></p>
-			<p>Phone: <a href="tel:375256474526">+375256474526</a></p>
-			<p>Social network: <a href="">Link to social network</a></p>
-		</div>
+	<div class="wrapper">
+		<main class="page">
+			<section data-fullscreen class="mainblock">
+				<div class="mainblock__container">
+					<div class="mainblock__content">
+						<a href="#" class="mainblock__logo">
+							<picture><source srcset="img/logoH.webp" type="image/webp"><img src="img/logoH.png" alt="logo" /></picture>
+						</a>
+						<h1 class="mainblock__text">
+							<div class="mainblock__title">Clear, smart, attractive design</div>
+							<div class="mainblock__subtitle">for your app, logo, website</div>
+						</h1>
+						<div class="mainblock__footer">
+							<a href="#" class="mainblock__button button button_w"><span>READ MORE</span></a>
+							<a href="#content" data-goto=".about" class="mainblock__arrow">
+								<img src="img/icons/arrow-down.svg" alt="arrow icon" />
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="mainblock__image-ibg">
+					<picture><source srcset="img/bg_header.webp" type="image/webp"><img src="img/bg_header.jpg" alt="background" /></picture>
+				</div>
+			</section>
+
+			<div class="content">
+				<header class="menu menu_mb">
+					<nav class="menu__container">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="#" data-goto=".mainblock" class="menu__link">HOME</a></li>
+							<li class="menu__item"><a href="#" data-goto=".about" class="menu__link">ABOUT US</a></li>
+							<li class="menu__item"><a href="#" data-goto=".portfolio" class="menu__link">PORTFOLIO</a></li>
+							<li class="menu__item"><a href="#" data-goto=".contacts" class="menu__link">CONTACT</a></li>
+						</ul>
+					</nav>
+				</header>
+
+
+				<section class="about">
+					<div class="about__container">
+						<div class="about__header-block header-block">
+							<h2 class="header-block__title">ABOUT</h2>
+							<p class="header-block__subtitle">
+								We specialize in contemporary, functional, and stunning websites with
+								design that really brings that "WOW" factor. In our design process, we
+								make sure to stay one step ahead of the latest trends, <br />
+								never forgetting to abide by key web standards.
+							</p>
+						</div>
+						<div class="about__body">
+							<div class="about__row">
+								<div class="about__column">
+									<div class="about__item">
+										<div class="about__icon">
+											<picture><source srcset="img/About/01.webp" type="image/webp"><img src="img/About/01.png" alt="web" /></picture>
+										</div>
+										<h4 class="about__title">WEB</h4>
+										<div class="about__text">
+											We tend to deliver unique and functional design, through
+											innovation and creativity.
+										</div>
+									</div>
+								</div>
+								<div class="about__column">
+									<div class="about__item">
+										<div class="about__icon">
+											<picture><source srcset="img/About/02.webp" type="image/webp"><img src="img/About/02.png" alt="ios and android" /></picture>
+										</div>
+										<h4 class="about__title">iOS AND ANDROID</h4>
+										<div class="about__text">
+											We seek to bring new businesses and customers closer together
+											through valuable insights and proper targeting.
+										</div>
+									</div>
+								</div>
+								<div class="about__column">
+									<div class="about__item">
+										<div class="about__icon about__icon_l">
+											<picture><source srcset="img/About/03.webp" type="image/webp"><img src="img/About/03.png" alt="marketing" /></picture>
+										</div>
+										<h4 class="about__title">MARKETING</h4>
+										<div class="about__text">
+											We’ll help you establish the right goals and build the right
+											paths. Success depends on setting the right intention.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="portfolio">
+					<div class="portfolio__container">
+						<div class="portfolio__header-block header-block">
+							<h2 class="header-block__title">PORTFOLIO</h2>
+						</div>
+						<nav class="portfolio__filter _filter">
+							<ul class="filter__list">
+								<li data-filter="1" class="filter__item _active">All</li>
+								<li data-filter="2" class="filter__item">Web</li>
+								<li data-filter="3" class="filter__item">Apps</li>
+								<li data-filter="4" class="filter__item">Other</li>
+							</ul>
+						</nav>
+						<ul data-gallery class="portfolio__items">
+							<li data-src="img/Portfolio/01.jpg" class="portfolio__column-ibg f_4">
+								<picture><source srcset="img/Portfolio/01.webp" type="image/webp"><img src="img/Portfolio/01.jpg" alt="01" /></picture>
+							</li>
+							<li data-src="img/Portfolio/02.jpg" class="portfolio__column-ibg f_4">
+								<picture><source srcset="img/Portfolio/02.webp" type="image/webp"><img src="img/Portfolio/02.jpg" alt="02" /></picture>
+							</li>
+							<li data-src="img/Portfolio/03.jpg" class="portfolio__column-ibg f_2">
+								<picture><source srcset="img/Portfolio/03.webp" type="image/webp"><img src="img/Portfolio/03.jpg" alt="03" /></picture>
+							</li>
+							<li data-src="img/Portfolio/04.jpg" class="portfolio__column-ibg f_2">
+								<picture><source srcset="img/Portfolio/04.webp" type="image/webp"><img src="img/Portfolio/04.jpg" alt="04" /></picture>
+							</li>
+							<li data-src="img/Portfolio/05.jpg" class="portfolio__column-ibg f_3">
+								<picture><source srcset="img/Portfolio/05.webp" type="image/webp"><img src="img/Portfolio/05.jpg" alt="05" /></picture>
+							</li>
+							<li data-src="img/Portfolio/06.jpg" class="portfolio__column-ibg f_2">
+								<picture><source srcset="img/Portfolio/06.webp" type="image/webp"><img src="img/Portfolio/06.jpg" alt="06" /></picture>
+							</li>
+						</ul>
+						<div class="portfolio__footer">
+							<a href="#" class="portfolio__button button button_b"><span> READ MORE</span></a>
+						</div>
+					</div>
+				</section>
+
+				<section class="partners">
+					<div class="partners__container">
+						<h2 class="partners__title">Our partners</h2>
+						<div class="partners__items">
+							<div class="partners__column">
+								<div class="partners__item">
+									<picture><source srcset="img/Partners/01.webp" type="image/webp"><img src="img/Partners/01.png" alt="icon" /></picture>
+								</div>
+							</div>
+							<div class="partners__column">
+								<div class="partners__item">
+									<picture><source srcset="img/Partners/02.webp" type="image/webp"><img src="img/Partners/02.png" alt="icon" /></picture>
+								</div>
+							</div>
+							<div class="partners__column">
+								<div class="partners__item">
+									<picture><source srcset="img/Partners/03.webp" type="image/webp"><img src="img/Partners/03.png" alt="icon" /></picture>
+								</div>
+							</div>
+							<div class="partners__column">
+								<div class="partners__item">
+									<picture><source srcset="img/Partners/04.webp" type="image/webp"><img src="img/Partners/04.png" alt="icon" /></picture>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="partners__bg-ibg">
+						<picture><source srcset="img/Partners/bg.webp" type="image/webp"><img src="img/Partners/bg.jpg" alt="background" /></picture>
+					</div>
+				</section>
+
+				<section class="contacts">
+					<div class="contacts__container">
+						<div class="contacts__header-block header-block">
+							<h2 class="header-block__title">Contact</h2>
+						</div>
+						<div class="contacts__body">
+							<div class="contacts__column">
+								<form action="#" class="contacts__form form-contacts">
+									<div class="form-contacts__body">
+										<div class="form-contacts__row">
+											<div class="form-contacts__column">
+												<div class="form-contacts__input">
+													<div class="form-contacts__label">YOUR NAME</div>
+													<input autocomplete="off" type="text" name="name" data-error="error" placeholder="" class="input" data-required />
+												</div>
+											</div>
+											<div class="form-contacts__column">
+												<div class="form-contacts__input">
+													<div class="form-contacts__label">YOUR E-MAIL</div>
+													<input autocomplete="off" type="text" name="email" data-error="Wrong email address" placeholder="" class="input" data-required="email" />
+												</div>
+											</div>
+										</div>
+										<div class="form-contacts__input">
+											<div class="form-contacts__label">MESSAGE</div>
+											<textarea autocomplete="off" type="text" name="text" data-error="error" placeholder="" class="input" data-required></textarea>
+										</div>
+										<button type="submit" class="form-contacts__button button button_b">
+											<span>Send</span>
+										</button>
+									</div>
+								</form>
+							</div>
+
+							<div class="contacts__column">
+								<div class="contacts__content">
+									<div class="contacts__text">
+										Have an idea for a project? Just looking to explore and see the
+										possibilities? <br />
+										I'm here to help.
+									</div>
+									<div class="contacts__name">Postma Elena</div>
+									<div class="contacts__social social">
+										<a href="#" class="social__item">
+											<picture><source srcset="img/icons/iconFB.webp" type="image/webp"><img src="img/icons/iconFB.png" alt="Facebook" /></picture>
+										</a>
+										<a href="#" class="social__item">
+											<picture><source srcset="img/icons/iconLnI.webp" type="image/webp"><img src="img/icons/iconLnI.png" alt="LinkedIn" /></picture>
+										</a>
+									</div>
+									<div class="contacts__email">
+										e-mail:<a href="mailto:postma.elena@gmail.com">postma.elena@gmail.com</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__body">
+					<a href="#" class="footer__logo">
+						<picture><source srcset="img/logoF.webp" type="image/webp"><img src="img/logoF.png" alt="Logo" /></picture>
+					</a>
+					<nav class="footer__menu">
+						<ul class="footer__list">
+							<li class="footer__item"><a href="#" class="footer__link">Home</a></li>
+
+							<li class="footer__item"><a href="#" class="footer__link">Facebook</a></li>
+
+							<li class="footer__item"><a href="#" class="footer__link">Linkedin</a></li>
+
+							<li class="footer__item"><a href="#" class="footer__link">Contact</a></li>
+						</ul>
+					</nav>
+					<a href="#" class="footer__text">© 2015. All Rights Reserved</a>
+				</div>
+			</div>
+		</footer>
+
 	</div>
+	<script src="js/app.min.js?_v=20221018183055"></script>
 </body>
-<style>
-	@charset "UTF-8";
-	@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
-
-	*,
-	*::before,
-	*::after {
-		padding: 0px;
-		margin: 0px;
-		border: 0px;
-		box-sizing: border-box;
-	}
-
-	html,
-	body {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		min-width: 320px;
-		width: 100%;
-		color: #fff;
-		background-color: #5e5373;
-	}
-
-	body {
-		font-family: Montserrat;
-		font-size: 100%;
-		line-height: 1;
-		font-size: 1rem;
-	}
-
-	a {
-		text-decoration: underline;
-		color: #ebe691;
-	}
-
-	a:visited {
-		text-decoration: underline;
-		color: #aaa768;
-	}
-
-	a:hover {
-		text-decoration: none;
-	}
-
-	ul li {
-		list-style: none;
-	}
-
-	img {
-		vertical-align: top;
-	}
-
-	.wrapper {
-		width: 100%;
-		min-height: 100%;
-		overflow: hidden;
-	}
-
-	.rootpage {
-		padding: 30px;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	@media (max-width: 767px) {
-		.rootpage {
-			padding: 30px 15px;
-		}
-	}
-
-	h1 {
-		color: #ebe691;
-		font-size: 2.5rem;
-		margin: 0px 0px 1.25rem 0px;
-	}
-
-	@media (max-width: 767px) {
-		h1 {
-			font-size: 1.85rem;
-			margin: 0px 0px 1.25rem 0px;
-		}
-	}
-
-	h2 {
-		color: #ebe691;
-		font-size: 1.25rem;
-		margin: 0px 0px 1rem 0px;
-	}
-
-	@media (max-width: 767px) {
-		h2 {
-			font-size: 1.125rem;
-			margin: 0px 0px 1rem 0px;
-		}
-	}
-
-	.rootpage__info {
-		line-height: 140%;
-		margin: 0px 0px 1.5rem 0px;
-	}
-
-	.rootpage__list {
-		margin: 0px 0px 2.25rem 1.25rem;
-	}
-
-	.rootpage__list li:not(:last-child) {
-		margin: 0px 0px 15px 0px;
-	}
-
-	.rootpage__contacts,
-	.rootpage__tnx {
-		border-radius: 200px;
-		padding: 20px 65px;
-		line-height: 140%;
-	}
-
-	@media (max-width: 767px) {
-
-		.rootpage__contacts,
-		.rootpage__tnx {
-			border-radius: 40px;
-			padding: 20px;
-		}
-	}
-
-	.rootpage__contacts {
-		background: #32b5a4;
-	}
-
-	.rootpage__contacts a {
-		color: #ebe691;
-	}
-</style>
 
 </html>

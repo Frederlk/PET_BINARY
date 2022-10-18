@@ -77,6 +77,11 @@
     &__arrow {
         position: relative;
         animation: arrow 1.5s infinite ease;
+        width: rem(20);
+        margin: 0px auto;
+        img {
+            max-width: 100%;
+        }
     }
 
     @keyframes arrow {
