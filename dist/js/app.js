@@ -34,6 +34,9 @@
             return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
         }
     };
+    function addTouchClass() {
+        if (isMobile.any()) document.documentElement.classList.add("touch");
+    }
     function fullVHfix() {
         const fullScreens = document.querySelectorAll("[data-fullscreen]");
         if (fullScreens.length && isMobile.any()) {
@@ -1956,6 +1959,7 @@ PERFORMANCE OF THIS SOFTWARE.
         }
     };
     isWebp();
+    addTouchClass();
     fullVHfix();
     formFieldsInit({
         viewPass: false
